@@ -19,7 +19,7 @@ const CTA = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="xl" className="group" asChild>
-              <a href="http://tailtrails-webapp.jms.rocks/signup" target="_blank" rel="noopener noreferrer">
+              <a href="https://app.tailtrails.club/signup" target="_blank" rel="noopener noreferrer">
                 Get Started Free
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>

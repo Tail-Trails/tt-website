@@ -26,12 +26,12 @@ const Header = () => {
 
         <div className="flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href="http://tailtrails-webapp.jms.rocks/" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.tailtrails.club" target="_blank" rel="noopener noreferrer">
               Log In
             </a>
           </Button>
           <Button variant="default" size="sm" asChild>
-            <a href="http://tailtrails-webapp.jms.rocks/signup" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.tailtrails.club/signup" target="_blank" rel="noopener noreferrer">
               Get Started
             </a>
           </Button>

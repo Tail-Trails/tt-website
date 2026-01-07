@@ -33,7 +33,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up opacity-0 stagger-3">
             <Button variant="hero" size="xl" asChild>
-              <a href="http://tailtrails-webapp.jms.rocks/" target="_blank" rel="noopener noreferrer">
+              <a href="https://app.tailtrails.club" target="_blank" rel="noopener noreferrer">
                 Start Walking Free
               </a>
             </Button>
