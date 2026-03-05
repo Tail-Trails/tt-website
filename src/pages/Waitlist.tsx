@@ -28,6 +28,10 @@ const Waitlist: React.FC = () => {
       toast({ title: "Success", description: "You've been added to the waitlist." });
       setName("");
       setEmail("");
+      // redirect to home after 0.5 seconds
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 500);
     } catch (err: any) {
       toast({ title: "Error", description: err?.message ?? String(err) });
     } finally {
