@@ -1,34 +1,31 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { motion } from 'motion/react';
 
 const CTA = () => {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-primary/10" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6 text-balance">
-            Ready to Start Your <span className="text-primary">Walking Journey</span>?
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground font-body mb-10 max-w-2xl mx-auto">
-            Join thousands of dog owners who are making every walk count. 
-            It's free to get started!
-          </p>
+    <section className="py-20">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="glass rounded-[48px] p-8 md:p-20 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-brand/5 -z-10" />
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand/10 blur-[80px] rounded-full" />
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl" className="group" asChild>
-              <a href="https://app.tailtrails.club/signup" target="_blank" rel="noopener noreferrer">
-                Get Started Free
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-          </div>
-          
-          <p className="mt-6 text-sm text-muted-foreground font-body">
-            No credit card required • Free forever for basic features
-          </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-display font-extrabold mb-6 text-text-primary">
+              Ready to Start Your <br />
+              <span className="text-brand">Walking Journey?</span>
+            </h2>
+            <p className="text-text-primary/70 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+              Join thousands of dog owners who are making every walk count. It's free to get started!
+            </p>
+            
+            <a href="/waitlist" className="bg-brand hover:bg-brand-light text-bg-primary px-12 py-6 rounded-2xl font-extrabold text-xl transition-all transform hover:scale-105 active:scale-95 mb-6 inline-flex items-center justify-center">
+              Join Waitlist
+            </a>
+            
+          </motion.div>
         </div>
       </div>
     </section>

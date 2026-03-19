@@ -1,76 +1,60 @@
-import { Download, Play, Share2, Heart } from "lucide-react";
-
-const steps = [
-  {
-    icon: Download,
-    step: "01",
-    title: "Sign Up",
-    description: "Create your free account in seconds. Add your dog's profile and you're ready to go.",
-  },
-  {
-    icon: Play,
-    step: "02",
-    title: "Start Recording",
-    description: "Hit record when you head out. The app tracks your route, distance, and time automatically.",
-  },
-  {
-    icon: Share2,
-    step: "03",
-    title: "Share & Tag",
-    description: "Add photos, labels, and notes. Share with the community or keep it for yourself.",
-  },
-  {
-    icon: Heart,
-    step: "04",
-    title: "Discover & Connect",
-    description: "Explore routes shared by others. Find dog-friendly spots and make walking buddies.",
-  },
-];
+import { UserPlus, Play, Image, Search } from 'lucide-react';
 
 const HowItWorks = () => {
+  const steps = [
+    {
+      num: "01",
+      title: "Sign Up",
+      desc: "Create your free account in seconds. Add your dog's profile and you're ready to go.",
+      icon: UserPlus
+    },
+    {
+      num: "02",
+      title: "Start Recording",
+      desc: "Hit record when you head out. The app tracks your route, distance, and time automatically.",
+      icon: Play
+    },
+    {
+      num: "03",
+      title: "Share & Tag",
+      desc: "Add photos, labels, and notes. Share with the community or keep it for yourself.",
+      icon: Image
+    },
+    {
+      num: "04",
+      title: "Discover & Connect",
+      desc: "Explore routes shared by others. Find dog-friendly spots and make walking buddies.",
+      icon: Search
+    }
+  ];
+
   return (
-    <section id="how-it-works" className="py-24 bg-background relative">
-      <div className="container mx-auto px-6">
-        {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium font-body mb-4">
-            How It Works
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Start Your Adventure in Minutes
-          </h2>
-          <p className="text-lg text-muted-foreground font-body">
-            Getting started with TailTrails is as easy as going for a walk.
-          </p>
+    <section id="how-it-works" className="py-20 relative overflow-hidden scroll-mt-18">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-text-primary">Start Your Adventure in Minutes</h2>
+          <p className="text-text-secondary font-medium">Getting started with TailTrails is as easy as going for a walk.</p>
         </div>
 
-        {/* Steps */}
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {steps.map((step, index) => (
-              <div
-                key={step.step}
-                className="relative p-6 rounded-2xl bg-card border border-border/50 hover:shadow-elevated transition-all duration-300"
-              >
-                {/* Step number */}
-                <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-soft">
-                  <span className="text-sm font-bold text-primary-foreground font-body">{step.step}</span>
-                </div>
-                
-                <div className="ml-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <step.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-display font-semibold text-foreground mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground font-body leading-relaxed">
-                    {step.description}
-                  </p>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {steps.map((step, i) => (
+            <div key={i} className="relative group">
+              <div className="mb-6 flex items-end gap-4">
+                <span className="text-6xl font-display font-black text-white/10 group-hover:text-brand/30 transition-colors duration-500 leading-none">
+                  {step.num}
+                </span>
+                <div className="w-12 h-12 glass rounded-xl flex items-center justify-center mb-1 border-accent-secondary/20">
+                  <step.icon className="text-brand w-6 h-6" />
                 </div>
               </div>
-            ))}
-          </div>
+              <h4 className="text-xl font-bold mb-2 text-text-primary">{step.title}</h4>
+              <p className="text-text-primary/70 leading-relaxed">{step.desc}</p>
+              
+              {i < steps.length - 1 && (
+                <div className="hidden md:block absolute top-12 -right-4 w-8 h-[1px] bg-white/10" />
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
