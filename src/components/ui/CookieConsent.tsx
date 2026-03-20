@@ -57,7 +57,7 @@ const CookieConsent: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
-      <div className="pointer-events-auto glass rounded-lg p-2 md:p-3 w-full max-w-[18rem] md:max-w-xs flex items-center gap-2 md:gap-3 shadow-sm text-xs">
+      <div className="pointer-events-auto bento-card rounded-lg p-2 md:p-3 w-full max-w-[18rem] md:max-w-xs flex items-center gap-2 md:gap-3 shadow-sm text-xs">
         <div className="text-xs text-text-secondary text-center md:text-left flex-1 leading-tight">
           We use cookies for analytics.
         </div>
