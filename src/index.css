@@ -37,3 +37,31 @@
 @utility bento-card {
   @apply bg-bg-secondary border border-border-subtle rounded-3xl p-8 transition-all duration-300;
 }
+
+/* Semantic utility aliases to map theme variables to class names used across the app */
+:root {
+  /* expose aliases for legacy class names */
+}
+
+.bg-background { background-color: var(--color-bg-primary); }
+.bg-bg-primary { background-color: var(--color-bg-primary); }
+.bg-bg-secondary { background-color: var(--color-bg-secondary); }
+.bg-bg-variant { background-color: var(--color-bg-variant); }
+
+.text-foreground { color: var(--color-text-primary); }
+.text-text-primary { color: var(--color-text-primary); }
+.text-text-secondary { color: var(--color-text-secondary); }
+.text-text-muted { color: var(--color-text-muted); }
+.text-muted-foreground { color: var(--color-text-muted); }
+
+.border-border { border-color: var(--color-border-subtle); }
+.border-border-subtle { border-color: var(--color-border-subtle); }
+
+.bg-brand { background-color: var(--color-brand); }
+.bg-brand-light { background-color: var(--color-brand-light); }
+.text-bg-primary { color: var(--color-bg-primary); }
+
+.bg-secondary { background-color: rgba(255,255,255,0.04); }
+.text-secondary-foreground { color: var(--color-text-secondary); }
+
+.glass { background-color: rgba(255,255,255,0.05); }

@@ -1,0 +1,35 @@
+.featured-card {
+  position: relative;
+  display: block;
+}
+
+.featured-card .featured-meta {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.7) 100%);
+  color: white;
+}
+
+/* Slightly lift cards on hover */
+.bento-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+/* Make featured card text pop on dark backgrounds */
+.featured-card h2,
+.featured-card p {
+  color: var(--color-text-primary);
+}
+
+.featured-card img {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .featured-card .featured-meta {
+    padding: 2rem 3rem;
+  }
+}

@@ -26,6 +26,7 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm font-medium text-text-muted hover:text-brand transition-colors">Features</a>
             <a href="#how-it-works" className="text-sm font-medium text-text-muted hover:text-brand transition-colors">How It Works</a>
+            <a href="/blog" className="text-sm font-medium text-text-muted" onClick={() => setIsMenuOpen(false)}>Blogs</a>
             <a href="/waitlist" className="bg-brand hover:bg-brand-light text-bg-primary px-6 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 active:scale-95 inline-flex items-center justify-center">
               Join Waitlist
             </a>
