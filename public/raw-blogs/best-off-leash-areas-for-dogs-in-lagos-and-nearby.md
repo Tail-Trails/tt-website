@@ -1,12 +1,3 @@
----
-title: "Best Off-Leash Areas for Dogs in Lagos (and Nearby)"
-date: 2025-05-01
-description: "Looking for off-leash areas for dogs in Lagos, Portugal? Discover the best spots for safe, enjoyable off-leash walks, plus what to watch out for."
-category: Insights
-readTime: "6 min"
-live: true
----
-
 ### **Introduction**
 
 Finding a good place to let your dog off-leash in Lagos isn’t always straightforward.
@@ -23,9 +14,9 @@ Here are some of the best off-leash-friendly areas around Lagos, and how to choo
 
 ---
 
-## **1\. Mata Nacional de Barão de São João**
+## **1. Mata Nacional de Barão de São João**
 
-**Best for:** Most dogs  
+**Best for:** Most dogs
  **Why it works:**
 
 * Wide, open forest trails  
@@ -36,9 +27,9 @@ Ideal for dogs who need **space without isolation**
 
 ---
 
-## **2\. Praia da Bordeira (West Coast)**
+## **2. Praia da Bordeira (West Coast)**
 
-**Best for:** High-energy dogs  
+**Best for:** High-energy dogs
  **Why it works:**
 
 * Huge open beach  
@@ -52,9 +43,9 @@ Ideal for dogs who need **space without isolation**
 
 ---
 
-## **3\. Ria de Alvor (Quiet Sections)**
+## **3. Ria de Alvor (Quiet Sections)**
 
-**Best for:** Lower-energy or calm dogs  
+**Best for:** Lower-energy or calm dogs
  **Why it works:**
 
 * Flat terrain  
@@ -64,9 +55,9 @@ Avoid peak hours, it can get busy
 
 ---
 
-## **4\. Monchique Countryside**
+## **4. Monchique Countryside**
 
-**Best for:** Dogs needing low stimulation  
+**Best for:** Dogs needing low stimulation
  **Why it works:**
 
 * Quiet  
@@ -77,7 +68,7 @@ Great for reactive or sensitive dogs
 
 ---
 
-## **5\. Local Countryside Trails (Hidden Gems)**
+## **5. Local Countryside Trails (Hidden Gems)**
 
 Often overlooked, but some of the best options. 
 
@@ -133,4 +124,3 @@ It’s to do it in a way that:
 Because the right environment makes all the difference.
 
 <!-- **Want help finding the right trails for your dog? Download TailTrails here.** -->
-

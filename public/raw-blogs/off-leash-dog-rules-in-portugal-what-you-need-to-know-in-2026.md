@@ -1,12 +1,3 @@
----
-title: "Off-Leash Dog Rules in Portugal: What You Need to Know in 2026"
-date: 2026-04-01
-description: "Can you walk your dog off-leash in Portugal? Learn the rules, risks, and best practices for safe and legal off-leash walks."
-category: Trends
-readTime: "6 min"
-live: true
----
-
 ### **Introduction**
 
 Letting your dog off-leash is one of the simplest ways to give them freedom, enrichment, and a more natural experience.
@@ -21,14 +12,14 @@ Here’s what you need to know.
 
 In general, dogs in Portugal are expected to be **under control at all times in public spaces**.
 
-That doesn’t always mean physically on a leash \- but it *does* mean:
+That doesn’t always mean physically on a leash - but it *does* mean:
 
 * Your dog must respond reliably to commands  
 * They must not pose a risk to people, other animals, or property  
 * They must not cause disturbance
 
 In many **urban areas**, leash use is effectively required.  
-In more **rural or remote areas**, off-leash walking is more commonly accepted \- but still comes with responsibility.
+In more **rural or remote areas**, off-leash walking is more commonly accepted - but still comes with responsibility.
 
 ---
 
@@ -51,7 +42,7 @@ You’re more likely to safely and responsibly walk your dog off-leash in:
 * Remote coastal routes (away from crowds)  
 * Open land where visibility is high
 
-However, even in these areas, it’s not just about permission \- it’s about suitability for your dog.
+However, even in these areas, it’s not just about permission - it’s about suitability for your dog.
 
 ---
 
@@ -75,7 +66,7 @@ Even if technically allowed, these environments can be:
 
 ### **The Risks Most Dog Owners Overlook**
 
-Many owners assume off-leash \= freedom.
+Many owners assume off-leash = freedom.
 
 But without the right environment, it can quickly become the opposite.
 

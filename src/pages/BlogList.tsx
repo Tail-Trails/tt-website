@@ -29,18 +29,21 @@ const BlogList = () => {
     setLoading(true);
     setError(null);
 
-    try {
-      const all = getAllPosts();
-      if (!active) return;
-      // If frontmatter contains `live` flag, respect it; otherwise show all
-      const filtered = isPreview ? all : (all as any).filter ? (all as any).filter((p: any) => p.live !== false) : all;
-      setPosts(filtered as BlogPost[]);
-    } catch (err: any) {
-      setError(err?.message || 'Failed to load posts.');
-    } finally {
-      if (active) setLoading(false);
-    }
+    const load = async () => {
+      try {
+        const all = await getAllPosts();
+        if (!active) return;
+        const filtered = isPreview ? all : all.filter((p: any) => p.live !== false);
+        setPosts(filtered as BlogPost[]);
+      } catch (err: any) {
+        if (!active) return;
+        setError(err?.message || 'Failed to load posts.');
+      } finally {
+        if (active) setLoading(false);
+      }
+    };
 
+    void load();
     return () => {
       active = false;
     };

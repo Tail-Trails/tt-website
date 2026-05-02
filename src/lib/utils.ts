@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import BLOG_IMAGE_FILENAMES from './blogImages';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -16,9 +17,15 @@ export function getUnsplashImage(query: string, width = 1200, height = 675, seed
   return `https://source.unsplash.com/${width}x${height}/?${q}${sig}`;
 }
 
-// Load local blog images (as URLs) from the assets folder.
-const _blogImageModules = import.meta.glob('../assets/blog-images/*', { eager: true, as: 'url' }) as Record<string, string>;
-const _blogImageUrls = Object.values(_blogImageModules);
+// Load local blog images (as URLs) from the public folder root.
+const _blogImageModules = import.meta.glob('/blog-images/*', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+let _blogImageUrls = Object.values(_blogImageModules);
+
+// Fallback: if the glob didn't return anything (public assets may not be importable),
+// construct URLs from known filenames in the `public/blog-images` folder.
+if (!_blogImageUrls || _blogImageUrls.length === 0) {
+  _blogImageUrls = BLOG_IMAGE_FILENAMES.map((n) => `/blog-images/${n}`);
+}
 
 /**
  * Pick a local blog image by numeric index. Images are assigned in order.

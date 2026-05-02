@@ -16,13 +16,21 @@ const BlogPost = () => {
 
   useEffect(() => {
     if (!slug) return;
-    const p = getPostBySlug(slug);
-    setPost(p);
-    if (p) {
-      const posts = getAllPosts();
-      const idx = posts.findIndex((x) => x.slug === p.slug);
-      setIndex(idx >= 0 ? idx : undefined);
-    }
+    let active = true;
+    const load = async () => {
+      const p = await getPostBySlug(slug);
+      if (!active) return;
+      setPost(p);
+      if (p) {
+        const posts = await getAllPosts();
+        const idx = posts.findIndex((x) => x.slug === p.slug);
+        setIndex(idx >= 0 ? idx : undefined);
+      }
+    };
+    void load();
+    return () => {
+      active = false;
+    };
   }, [slug]);
 
   if (!post) {

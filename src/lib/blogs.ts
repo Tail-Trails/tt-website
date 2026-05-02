@@ -9,6 +9,8 @@ export type BlogPost = {
   live?: boolean;
 };
 
+import meta from './blogMeta';
+
 function slugify(name: string) {
   return name
     .toLowerCase()
@@ -41,33 +43,52 @@ function parseFrontmatter(raw: string) {
   return { fm, content };
 }
 
-// Import all markdown files from the assets raw-blogs folder as raw strings
-const modules = import.meta.glob('../assets/raw-blogs/*.md', { eager: true, as: 'raw' }) as Record<string, string>;
 
-const posts = Object.entries(modules).map(([path, raw]) => {
-  const file = path.split('/').pop()!;
-  const slug = slugify(file);
-  const { fm, content } = parseFrontmatter(raw);
-  return {
-    slug,
-    title: fm.title ?? file.replace(/\.md$/, ''),
-    date: fm.date,
-    description: fm.description,
-    content,
-    category: fm.category,
-    readTime: fm.readTime,
-    live: typeof fm.live === 'boolean' ? fm.live : fm.live === 'true',
-  } as BlogPost;
-}).sort((a, b) => {
-  const da = a.date ?? '';
-  const db = b.date ?? '';
-  return db.localeCompare(da);
-});
+let _postsCache: BlogPost[] | null = null;
 
-export function getAllPosts(): BlogPost[] {
-  return posts;
+async function loadPosts(): Promise<BlogPost[]> {
+  if (_postsCache) return _postsCache;
+
+  const slugs = Object.keys(meta);
+  const results: BlogPost[] = [];
+  for (const slug of slugs) {
+    try {
+      const url = `/raw-blogs/${slug}.md`;
+      const res = await fetch(url);
+      const raw = await res.text();
+      const { fm, content } = parseFrontmatter(raw);
+      const merged = { ...(meta[slug] || {}), ...fm } as Record<string, any>;
+      results.push({
+        slug,
+        title: merged.title ?? slug,
+        date: merged.date,
+        description: merged.description,
+        content,
+        category: merged.category,
+        readTime: merged.readTime,
+        live: typeof merged.live === 'boolean' ? merged.live : merged.live === 'true',
+      } as BlogPost);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.warn('Failed to load blog for slug:', slug, e);
+    }
+  }
+
+  results.sort((a, b) => {
+    const da = a.date ?? '';
+    const db = b.date ?? '';
+    return db.localeCompare(da);
+  });
+
+  _postsCache = results;
+  return results;
 }
 
-export function getPostBySlug(slug: string): BlogPost | undefined {
-  return posts.find((p) => p.slug === slug);
+export async function getAllPosts(): Promise<BlogPost[]> {
+  return await loadPosts();
+}
+
+export async function getPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  const all = await loadPosts();
+  return all.find((p) => p.slug === slug);
 }
